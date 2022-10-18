@@ -67,12 +67,12 @@ public class OpenReferralOrganisationSeedData
                 new List<OpenReferralContact>(new List<OpenReferralContact>()
                 {
                     new OpenReferralContact(
-                        "1567",
+                        "1566",
                         "Mr",
                         "John Smith",
                         new List<OpenReferralPhone>(new List<OpenReferralPhone>()
                         {
-                            new OpenReferralPhone("1567", "01827 65778")
+                            new OpenReferralPhone("1566", "01827 65778")
                         }
                         ))
                 }),
@@ -240,7 +240,483 @@ public class OpenReferralOrganisationSeedData
                         null
                         ))
                 }
-                ))
+                )),
+
+            new OpenReferralService(
+                "4a6d9aa9-68ea-42c3-a9cd-a9637122d29d",
+                parentId,
+                "Test Service 1",
+                @"A new test service.",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "active",
+                "www.website.com",
+                "support@website.com",
+                null,
+                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                {
+                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                }),
+                new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
+                {
+                    new OpenReferralEligibility("9110Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
+                }),
+                new List<OpenReferralFunding>(),
+                new List<OpenReferralHoliday_Schedule>(),
+                new List<OpenReferralLanguage>()
+                {
+                    new OpenReferralLanguage("987630f7-4c8b-4864-96be-bc74891f2v3p","English")
+                },
+                new List<OpenReferralRegular_Schedule>(),
+                new List<OpenReferralReview>(),
+                new List<OpenReferralContact>(new List<OpenReferralContact>()
+                {
+                    new OpenReferralContact(
+                        "1562",
+                        "Mr",
+                        "John Smith",
+                        new List<OpenReferralPhone>(new List<OpenReferralPhone>()
+                        {
+                            new OpenReferralPhone("1562", "01827 65778")
+                        }
+                        ))
+                }),
+                new List<OpenReferralCost_Option>(),
+                new List<OpenReferralService_Area>()
+                {
+                    new OpenReferralService_Area(Guid.NewGuid().ToString(), "National", null, null, "http://statistics.data.gov.uk/id/statistical-geography/K02000001")
+                },
+                new List<OpenReferralServiceAtLocation>( new List<OpenReferralServiceAtLocation>()
+                {
+                    new OpenReferralServiceAtLocation(
+                        "1751",
+                        new OpenReferralLocation(
+                            "28b073b5-a2a3-4425-9e5b-87023a2e5959",
+                            "",
+                            "",
+                            52.6312,
+                            -1.66526,
+                            new List<OpenReferralPhysical_Address>(new List<OpenReferralPhysical_Address>()
+                            {
+                                new OpenReferralPhysical_Address(
+                                    Guid.NewGuid().ToString(),
+                                    "75 Sheepcote Lane",
+                                    ", Stathe, Tamworth, Staffordshire, ",
+                                    "B77 3JN",
+                                    "England",
+                                    null
+                                    )
+                            }),
+                            new List<Accessibility_For_Disabilities>()
+                            ),
+                        new List<OpenReferralRegular_Schedule>(),
+                        new List<OpenReferralHoliday_Schedule>()
+                        )
+
+                }),
+                new List<OpenReferralService_Taxonomy>( new List<OpenReferralService_Taxonomy>()
+                {
+                    new OpenReferralService_Taxonomy
+                    ("1107",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccsource:Organisation",
+                        "Organisation",
+                        "BCC Data Sources",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("1108",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccprimaryservicetype:38",
+                        "Support",
+                        "BCC Primary Services",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("1109",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccagegroup:37",
+                        "Children",
+                        "BCC Age Groups",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("1110",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccusergroup:56",
+                        "Long Term Health Conditions",
+                        "BCC User Groups",
+                        null
+                        ))
+                }
+                )),
+
+            new OpenReferralService(
+                "4b8w9aa9-68ea-42c3-a9cd-a9637122d56j",
+                parentId,
+                "Test Service 2",
+                @"A new test service.",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "active",
+                "www.website.com",
+                "support@website.com",
+                null,
+                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                {
+                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                }),
+                new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
+                {
+                    new OpenReferralEligibility("9111Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
+                }),
+                new List<OpenReferralFunding>(),
+                new List<OpenReferralHoliday_Schedule>(),
+                new List<OpenReferralLanguage>()
+                {
+                    new OpenReferralLanguage("897630f7-4c8b-4864-96be-bc74891f2x1t","English")
+                },
+                new List<OpenReferralRegular_Schedule>(),
+                new List<OpenReferralReview>(),
+                new List<OpenReferralContact>(new List<OpenReferralContact>()
+                {
+                    new OpenReferralContact(
+                        "1563",
+                        "Mr",
+                        "John Smith",
+                        new List<OpenReferralPhone>(new List<OpenReferralPhone>()
+                        {
+                            new OpenReferralPhone("1563", "01827 65778")
+                        }
+                        ))
+                }),
+                new List<OpenReferralCost_Option>(),
+                new List<OpenReferralService_Area>()
+                {
+                    new OpenReferralService_Area(Guid.NewGuid().ToString(), "National", null, null, "http://statistics.data.gov.uk/id/statistical-geography/K02000001")
+                },
+                new List<OpenReferralServiceAtLocation>( new List<OpenReferralServiceAtLocation>()
+                {
+                    new OpenReferralServiceAtLocation(
+                        "1752",
+                        new OpenReferralLocation(
+                            "2b883eb1-45e9-4504-a989-61404449baef",
+                            "",
+                            "",
+                            52.6312,
+                            -1.66526,
+                            new List<OpenReferralPhysical_Address>(new List<OpenReferralPhysical_Address>()
+                            {
+                                new OpenReferralPhysical_Address(
+                                    Guid.NewGuid().ToString(),
+                                    "75 Sheepcote Lane",
+                                    ", Stathe, Tamworth, Staffordshire, ",
+                                    "B77 3JN",
+                                    "England",
+                                    null
+                                    )
+                            }),
+                            new List<Accessibility_For_Disabilities>()
+                            ),
+                        new List<OpenReferralRegular_Schedule>(),
+                        new List<OpenReferralHoliday_Schedule>()
+                        )
+
+                }),
+                new List<OpenReferralService_Taxonomy>( new List<OpenReferralService_Taxonomy>()
+                {
+                    new OpenReferralService_Taxonomy
+                    ("2107",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccsource:Organisation",
+                        "Organisation",
+                        "BCC Data Sources",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("2108",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccprimaryservicetype:38",
+                        "Support",
+                        "BCC Primary Services",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("2109",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccagegroup:37",
+                        "Children",
+                        "BCC Age Groups",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("2110",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccusergroup:56",
+                        "Long Term Health Conditions",
+                        "BCC User Groups",
+                        null
+                        ))
+                }
+                )),
+
+            new OpenReferralService(
+                "3c9q9aa9-68ea-42c3-a9cd-a9637122d78p",
+                parentId,
+                "Test Service 3",
+                @"A new test service.",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "active",
+                "www.website.com",
+                "support@website.com",
+                null,
+                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                {
+                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                }),
+                new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
+                {
+                    new OpenReferralEligibility("9112Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
+                }),
+                new List<OpenReferralFunding>(),
+                new List<OpenReferralHoliday_Schedule>(),
+                new List<OpenReferralLanguage>()
+                {
+                    new OpenReferralLanguage("123630f7-4c8b-4864-96be-bc74891f2r0q","English")
+                },
+                new List<OpenReferralRegular_Schedule>(),
+                new List<OpenReferralReview>(),
+                new List<OpenReferralContact>(new List<OpenReferralContact>()
+                {
+                    new OpenReferralContact(
+                        "1564",
+                        "Mr",
+                        "John Smith",
+                        new List<OpenReferralPhone>(new List<OpenReferralPhone>()
+                        {
+                            new OpenReferralPhone("1564", "01827 65778")
+                        }
+                        ))
+                }),
+                new List<OpenReferralCost_Option>(),
+                new List<OpenReferralService_Area>()
+                {
+                    new OpenReferralService_Area(Guid.NewGuid().ToString(), "National", null, null, "http://statistics.data.gov.uk/id/statistical-geography/K02000001")
+                },
+                new List<OpenReferralServiceAtLocation>( new List<OpenReferralServiceAtLocation>()
+                {
+                    new OpenReferralServiceAtLocation(
+                        "1753",
+                        new OpenReferralLocation(
+                            "f43ecea5-f8cb-4da2-ab77-ec56ca5915aa",
+                            "",
+                            "",
+                            52.6312,
+                            -1.66526,
+                            new List<OpenReferralPhysical_Address>(new List<OpenReferralPhysical_Address>()
+                            {
+                                new OpenReferralPhysical_Address(
+                                    Guid.NewGuid().ToString(),
+                                    "75 Sheepcote Lane",
+                                    ", Stathe, Tamworth, Staffordshire, ",
+                                    "B77 3JN",
+                                    "England",
+                                    null
+                                    )
+                            }),
+                            new List<Accessibility_For_Disabilities>()
+                            ),
+                        new List<OpenReferralRegular_Schedule>(),
+                        new List<OpenReferralHoliday_Schedule>()
+                        )
+
+                }),
+                new List<OpenReferralService_Taxonomy>( new List<OpenReferralService_Taxonomy>()
+                {
+                    new OpenReferralService_Taxonomy
+                    ("3107",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccsource:Organisation",
+                        "Organisation",
+                        "BCC Data Sources",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("3108",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccprimaryservicetype:38",
+                        "Support",
+                        "BCC Primary Services",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("3109",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccagegroup:37",
+                        "Children",
+                        "BCC Age Groups",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("3110",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccusergroup:56",
+                        "Long Term Health Conditions",
+                        "BCC User Groups",
+                        null
+                        ))
+                }
+                )),
+
+            new OpenReferralService(
+                "9b1p9aa9-68ea-42c3-a9cd-a9637122d12v",
+                parentId,
+                "Test Service 4",
+                @"A new test service.",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "active",
+                "www.website.com",
+                "support@website.com",
+                null,
+                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                {
+                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                }),
+                new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
+                {
+                    new OpenReferralEligibility("9113Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
+                }),
+                new List<OpenReferralFunding>(),
+                new List<OpenReferralHoliday_Schedule>(),
+                new List<OpenReferralLanguage>()
+                {
+                    new OpenReferralLanguage("945630f7-4c8b-4864-96be-bc74891f2f3o","English")
+                },
+                new List<OpenReferralRegular_Schedule>(),
+                new List<OpenReferralReview>(),
+                new List<OpenReferralContact>(new List<OpenReferralContact>()
+                {
+                    new OpenReferralContact(
+                        "1565",
+                        "Mr",
+                        "John Smith",
+                        new List<OpenReferralPhone>(new List<OpenReferralPhone>()
+                        {
+                            new OpenReferralPhone("1565", "01827 65778")
+                        }
+                        ))
+                }),
+                new List<OpenReferralCost_Option>(),
+                new List<OpenReferralService_Area>()
+                {
+                    new OpenReferralService_Area(Guid.NewGuid().ToString(), "National", null, null, "http://statistics.data.gov.uk/id/statistical-geography/K02000001")
+                },
+                new List<OpenReferralServiceAtLocation>( new List<OpenReferralServiceAtLocation>()
+                {
+                    new OpenReferralServiceAtLocation(
+                        "1754",
+                        new OpenReferralLocation(
+                            "066019a1-1b4b-4435-b9e4-6b6e5bcb7830",
+                            "",
+                            "",
+                            52.6312,
+                            -1.66526,
+                            new List<OpenReferralPhysical_Address>(new List<OpenReferralPhysical_Address>()
+                            {
+                                new OpenReferralPhysical_Address(
+                                    Guid.NewGuid().ToString(),
+                                    "75 Sheepcote Lane",
+                                    ", Stathe, Tamworth, Staffordshire, ",
+                                    "B77 3JN",
+                                    "England",
+                                    null
+                                    )
+                            }),
+                            new List<Accessibility_For_Disabilities>()
+                            ),
+                        new List<OpenReferralRegular_Schedule>(),
+                        new List<OpenReferralHoliday_Schedule>()
+                        )
+
+                }),
+                new List<OpenReferralService_Taxonomy>( new List<OpenReferralService_Taxonomy>()
+                {
+                    new OpenReferralService_Taxonomy
+                    ("4107",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccsource:Organisation",
+                        "Organisation",
+                        "BCC Data Sources",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("4108",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccprimaryservicetype:38",
+                        "Support",
+                        "BCC Primary Services",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("4109",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccagegroup:37",
+                        "Children",
+                        "BCC Age Groups",
+                        null
+                        )),
+
+                    new OpenReferralService_Taxonomy
+                    ("4110",
+                    null,
+                    new OpenReferralTaxonomy(
+                        "bccusergroup:56",
+                        "Long Term Health Conditions",
+                        "BCC User Groups",
+                        null
+                        ))
+                }
+                )),
 
         };
     }
