@@ -5,6 +5,11 @@ namespace fh_service_directory_api.infrastructure.Persistence.Repository;
 
 public class OpenReferralOrganisationSeedData
 {
+    private readonly ApplicationDbContext _context;
+    public OpenReferralOrganisationSeedData(ApplicationDbContext context)
+    {
+        _context = context;
+    }
     public IReadOnlyCollection<OpenReferralOrganisation> SeedOpenReferralOrganistions()
     {
         List<OpenReferralOrganisation> openReferralOrganistions = new()
@@ -50,8 +55,12 @@ public class OpenReferralOrganisationSeedData
                 null,
                 new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
                 {
-                    new OpenReferralServiceDelivery("9db7f878-be53-4a45-ac47-472568dfeeea",ServiceDelivery.Online)
+                    _context.OpenReferralServiceDeliveries?.FirstOrDefault(s => s.ServiceDelivery == ServiceDelivery.Online),
                 }),
+                //new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                //{
+                //    new OpenReferralServiceDelivery("9db7f878-be53-4a45-ac47-472568dfeeea",ServiceDelivery.Online)
+                //}),
                 new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
                 {
                     new OpenReferralEligibility("9109Children","Children",null,13,0,new List<OpenReferralTaxonomy>())
@@ -113,43 +122,52 @@ public class OpenReferralOrganisationSeedData
                 {
                     new OpenReferralService_Taxonomy
                     ("9107",
-                    null,
-                    new OpenReferralTaxonomy(
-                        "bccsource:Organisation",
-                        "Organisation",
-                        "BCC Data Sources",
-                        null
-                        )),
+                    null, 
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccsource:Organisation")
+
+                    //new OpenReferralTaxonomy(
+                    //    "bccsource:Organisation",
+                    //    "Organisation",
+                    //    "BCC Data Sources",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("9108",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccprimaryservicetype:38",
-                        "Support",
-                        "BCC Primary Services",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccprimaryservicetype:38")
+                    //new OpenReferralTaxonomy(
+                    //    "bccprimaryservicetype:38",
+                    //    "Support",
+                    //    "BCC Primary Services",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("9109",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccagegroup:37",
-                        "Children",
-                        "BCC Age Groups",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccagegroup:37")
+                    //new OpenReferralTaxonomy(
+                    //    "bccagegroup:37",
+                    //    "Children",
+                    //    "BCC Age Groups",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("9110",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccusergroup:56",
-                        "Long Term Health Conditions",
-                        "BCC User Groups",
-                        null
-                        ))
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccusergroup:56")
+                    //new OpenReferralTaxonomy(
+                    //    "bccusergroup:56",
+                    //    "Long Term Health Conditions",
+                    //    "BCC User Groups",
+                    //    null
+                    //    )
+                    )
                 }
                 )),
 
@@ -167,10 +185,14 @@ public class OpenReferralOrganisationSeedData
                 "www.test1.com",
                 "support@test1.com",
                 null,
-                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
                 {
-                    new OpenReferralServiceDelivery("b2518131-90fc-4149-bbd1-1c9992cd92ac",ServiceDelivery.Online)
+                    _context.OpenReferralServiceDeliveries?.FirstOrDefault(s => s.ServiceDelivery == ServiceDelivery.Online),
                 }),
+                //new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                //{
+                //    new OpenReferralServiceDelivery("b2518131-90fc-4149-bbd1-1c9992cd92ac",ServiceDelivery.Online)
+                //}),
                 new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
                 {
                     new OpenReferralEligibility("9109T1Children","Children",null,13,0,new List<OpenReferralTaxonomy>())
@@ -233,12 +255,14 @@ public class OpenReferralOrganisationSeedData
                     new OpenReferralService_Taxonomy
                     ("9110TestDelete",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccusergroupTestDelete:56",
-                        "Test Conditions",
-                        "BCC User Groups",
-                        null
-                        ))
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccusergroupTestDelete:56")
+                    //new OpenReferralTaxonomy(
+                    //    "bccusergroupTestDelete:56",
+                    //    "Test Conditions",
+                    //    "BCC User Groups",
+                    //    null
+                    //    )
+                    )
                 }
                 )),
 
@@ -256,10 +280,14 @@ public class OpenReferralOrganisationSeedData
                 "www.website.com",
                 "support@website.com",
                 null,
-                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
                 {
-                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                    _context.OpenReferralServiceDeliveries?.FirstOrDefault(s => s.ServiceDelivery == ServiceDelivery.Online),
                 }),
+                //new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                //{
+                //    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                //}),
                 new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
                 {
                     new OpenReferralEligibility("9110Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
@@ -322,42 +350,50 @@ public class OpenReferralOrganisationSeedData
                     new OpenReferralService_Taxonomy
                     ("1107",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccsource:Organisation",
-                        "Organisation",
-                        "BCC Data Sources",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccsource:Organisation")
+                    //new OpenReferralTaxonomy(
+                    //    "bccsource:Organisation",
+                    //    "Organisation",
+                    //    "BCC Data Sources",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("1108",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccprimaryservicetype:38",
-                        "Support",
-                        "BCC Primary Services",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccprimaryservicetype:38")
+                    //new OpenReferralTaxonomy(
+                    //    "bccprimaryservicetype:38",
+                    //    "Support",
+                    //    "BCC Primary Services",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("1109",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccagegroup:37",
-                        "Children",
-                        "BCC Age Groups",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccagegroup:37")
+                    //new OpenReferralTaxonomy(
+                    //    "bccagegroup:37",
+                    //    "Children",
+                    //    "BCC Age Groups",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("1110",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccusergroup:56",
-                        "Long Term Health Conditions",
-                        "BCC User Groups",
-                        null
-                        ))
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccusergroup:56")
+                    //new OpenReferralTaxonomy(
+                    //    "bccusergroup:56",
+                    //    "Long Term Health Conditions",
+                    //    "BCC User Groups",
+                    //    null
+                    //    )
+                    )
                 }
                 )),
 
@@ -375,10 +411,14 @@ public class OpenReferralOrganisationSeedData
                 "www.website.com",
                 "support@website.com",
                 null,
-                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
                 {
-                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                    _context.OpenReferralServiceDeliveries?.FirstOrDefault(s => s.ServiceDelivery == ServiceDelivery.Online),
                 }),
+                //new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                //{
+                //    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                //}),
                 new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
                 {
                     new OpenReferralEligibility("9111Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
@@ -441,42 +481,50 @@ public class OpenReferralOrganisationSeedData
                     new OpenReferralService_Taxonomy
                     ("2107",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccsource:Organisation",
-                        "Organisation",
-                        "BCC Data Sources",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccsource:Organisation")
+                    //new OpenReferralTaxonomy(
+                    //    "bccsource:Organisation",
+                    //    "Organisation",
+                    //    "BCC Data Sources",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("2108",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccprimaryservicetype:38",
-                        "Support",
-                        "BCC Primary Services",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccprimaryservicetype:38")
+                    //new OpenReferralTaxonomy(
+                    //    "bccprimaryservicetype:38",
+                    //    "Support",
+                    //    "BCC Primary Services",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("2109",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccagegroup:37",
-                        "Children",
-                        "BCC Age Groups",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccagegroup:37")
+                    //new OpenReferralTaxonomy(
+                    //    "bccagegroup:37",
+                    //    "Children",
+                    //    "BCC Age Groups",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("2110",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccusergroup:56",
-                        "Long Term Health Conditions",
-                        "BCC User Groups",
-                        null
-                        ))
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccusergroup:56")
+                    //new OpenReferralTaxonomy(
+                    //    "bccusergroup:56",
+                    //    "Long Term Health Conditions",
+                    //    "BCC User Groups",
+                    //    null
+                    //    )
+                    )
                 }
                 )),
 
@@ -494,10 +542,14 @@ public class OpenReferralOrganisationSeedData
                 "www.website.com",
                 "support@website.com",
                 null,
-                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                                new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
                 {
-                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                    _context.OpenReferralServiceDeliveries?.FirstOrDefault(s => s.ServiceDelivery == ServiceDelivery.Online),
                 }),
+                //new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                //{
+                //    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                //}),
                 new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
                 {
                     new OpenReferralEligibility("9112Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
@@ -560,42 +612,50 @@ public class OpenReferralOrganisationSeedData
                     new OpenReferralService_Taxonomy
                     ("3107",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccsource:Organisation",
-                        "Organisation",
-                        "BCC Data Sources",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccsource:Organisation")
+                    //new OpenReferralTaxonomy(
+                    //    "bccsource:Organisation",
+                    //    "Organisation",
+                    //    "BCC Data Sources",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("3108",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccprimaryservicetype:38",
-                        "Support",
-                        "BCC Primary Services",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccprimaryservicetype:38")
+                    //new OpenReferralTaxonomy(
+                    //    "bccprimaryservicetype:38",
+                    //    "Support",
+                    //    "BCC Primary Services",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("3109",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccagegroup:37",
-                        "Children",
-                        "BCC Age Groups",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccagegroup:37")
+                    //new OpenReferralTaxonomy(
+                    //    "bccagegroup:37",
+                    //    "Children",
+                    //    "BCC Age Groups",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("3110",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccusergroup:56",
-                        "Long Term Health Conditions",
-                        "BCC User Groups",
-                        null
-                        ))
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccusergroup:56")
+                    //new OpenReferralTaxonomy(
+                    //    "bccusergroup:56",
+                    //    "Long Term Health Conditions",
+                    //    "BCC User Groups",
+                    //    null
+                    //    )
+                    )
                 }
                 )),
 
@@ -615,8 +675,12 @@ public class OpenReferralOrganisationSeedData
                 null,
                 new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
                 {
-                    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                    _context.OpenReferralServiceDeliveries?.FirstOrDefault(s => s.ServiceDelivery == ServiceDelivery.Online),
                 }),
+                //new List<OpenReferralServiceDelivery>( new List<OpenReferralServiceDelivery>
+                //{
+                //    new OpenReferralServiceDelivery("d6216ae3-44c0-4a43-b815-967205fbb0da",ServiceDelivery.Online)
+                //}),
                 new List<OpenReferralEligibility>(new List<OpenReferralEligibility>
                 {
                     new OpenReferralEligibility("9113Children","Children",null,13,5,new List<OpenReferralTaxonomy>())
@@ -679,42 +743,50 @@ public class OpenReferralOrganisationSeedData
                     new OpenReferralService_Taxonomy
                     ("4107",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccsource:Organisation",
-                        "Organisation",
-                        "BCC Data Sources",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccsource:Organisation")
+                    //new OpenReferralTaxonomy(
+                    //    "bccsource:Organisation",
+                    //    "Organisation",
+                    //    "BCC Data Sources",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("4108",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccprimaryservicetype:38",
-                        "Support",
-                        "BCC Primary Services",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccprimaryservicetype:38")
+                    //new OpenReferralTaxonomy(
+                    //    "bccprimaryservicetype:38",
+                    //    "Support",
+                    //    "BCC Primary Services",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("4109",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccagegroup:37",
-                        "Children",
-                        "BCC Age Groups",
-                        null
-                        )),
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccagegroup:37")
+                    //new OpenReferralTaxonomy(
+                    //    "bccagegroup:37",
+                    //    "Children",
+                    //    "BCC Age Groups",
+                    //    null
+                    //    )
+                    ),
 
                     new OpenReferralService_Taxonomy
                     ("4110",
                     null,
-                    new OpenReferralTaxonomy(
-                        "bccusergroup:56",
-                        "Long Term Health Conditions",
-                        "BCC User Groups",
-                        null
-                        ))
+                    _context.OpenReferralTaxonomies.FirstOrDefault(t => t.Id == "bccusergroup:56")
+                    //new OpenReferralTaxonomy(
+                    //    "bccusergroup:56",
+                    //    "Long Term Health Conditions",
+                    //    "BCC User Groups",
+                    //    null
+                    //    )
+                    )
                 }
                 )),
 

@@ -46,7 +46,9 @@ public class ApplicationDbContextInitialiser
     {
         try
         {
-            await TrySeedAsync();
+            await TrySeedServiceDeliveriesAsync();
+            await TrySeedTaxonomiesAsync();
+            await TrySeedOrganisationsAsync();
         }
         catch (Exception ex)
         {
@@ -55,12 +57,12 @@ public class ApplicationDbContextInitialiser
         }
     }
 
-    public async Task TrySeedAsync()
+    public async Task TrySeedOrganisationsAsync()
     {
         if (_context.OpenReferralOrganisations.Any())
             return;
 
-        var openReferralOrganisationSeedData = new OpenReferralOrganisationSeedData();
+        var openReferralOrganisationSeedData = new OpenReferralOrganisationSeedData(_context);
 
         IReadOnlyCollection<OpenReferralOrganisation> openReferralOrganisations = openReferralOrganisationSeedData.SeedOpenReferralOrganistions();
 
@@ -71,5 +73,39 @@ public class ApplicationDbContextInitialiser
 
         await _context.SaveChangesAsync();
 
+    }
+
+    private async Task TrySeedTaxonomiesAsync()
+    {
+        if (_context.OpenReferralTaxonomies.Any())
+            return;
+
+        var openReferralTaxonomiesSeedData = new OpenReferralTaxonomiesSeedData();
+
+        IReadOnlyCollection<OpenReferralTaxonomy> openReferralTaxonomies = openReferralTaxonomiesSeedData.SeedOpenReferralTaxonomies();
+
+        foreach (var openReferralTaxonomy in openReferralTaxonomies)
+        {
+            _context.OpenReferralTaxonomies.Add(openReferralTaxonomy);
+        }
+
+        await _context.SaveChangesAsync();
+    }
+
+    private async Task TrySeedServiceDeliveriesAsync()
+    {
+        if (_context.OpenReferralServiceDeliveries.Any())
+            return;
+
+        var openReferralServiceDeliveriesSeedData = new OpenReferralServiceDeliveriesSeedData();
+
+        IReadOnlyCollection<OpenReferralServiceDelivery> openReferralServiceDeliveries = openReferralServiceDeliveriesSeedData.SeedOpenReferralServiceDeliveries();
+
+        foreach (var openReferralServiceDelivery in openReferralServiceDeliveries)
+        {
+            _context.OpenReferralServiceDeliveries.Add(openReferralServiceDelivery);
+        }
+
+        await _context.SaveChangesAsync();
     }
 }
